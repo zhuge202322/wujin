@@ -1,0 +1,23 @@
+# Dependencies and Next.js output
+/node_modules/
+/.next/
+/out/
+
+# Local QA and browser artifacts
+/tmp/
+*.log
+
+# Original company source materials are kept locally only
+/外贸网站搭建/
+
+# Local environment and deployment state
+.env*
+!.env.example
+/.vercel/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
