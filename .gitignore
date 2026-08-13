@@ -5,6 +5,7 @@
 
 # Local QA and browser artifacts
 /tmp/
+/.worktrees/
 *.log
 
 # Original company source materials are kept locally only
