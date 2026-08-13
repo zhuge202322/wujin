@@ -16,7 +16,7 @@ The homepage keeps a four-slide full-screen carousel.
    - Title: `Large Stock Available`
    - Copy: `Ready-to-ship flanges with short lead time.`
    - Proof: `30 Million Stock`
-   - Background: warehouse stock photography using the supplied stock images
+   - Background: a composed warehouse presentation using supplied warehouse images 1-3, so the slide communicates stock depth rather than relying on one generic warehouse crop
 3. Standards and production capacity
    - Title: `Flanges for Worldwide Standards & Applications`
    - Standards: `ASME | ANSI | DIN | EN | JIS | BS | GB | API`
@@ -40,7 +40,7 @@ Desktop navigation becomes:
 - Applications -> `/#industries`
 - About Us -> `/about`
 
-The existing search and language controls remain. The primary header command changes from `Get a Quote` to `Upload Drawing` and opens an email RFQ with a drawing-focused subject. A compact social-contact group is added beside it using familiar icons for WhatsApp and email.
+The existing search and language controls remain. Keep the `Get a Quote` command and add a separate `Upload Drawing` command with a drawing-focused email subject. A compact social-contact group is added beside the commands using familiar icons for WhatsApp and email.
 
 ## Proof Rail
 
@@ -49,7 +49,7 @@ The rail immediately below the hero becomes five concise proof points:
 - `2016` Established
 - `2,000 m²` Factory Area
 - `30 Million` Stock
-- `15 Tons / Day` Production Capacity
+- `15 Tons / Day` Daily Output
 - `About LP` linking to `/about`
 
 Desktop presents the items in a single scan line. Tablet and mobile wrap them without horizontal overflow.
@@ -61,7 +61,8 @@ The two-column introduction uses:
 - Label: `STAINLESS STEEL FLANGE MANUFACTURER`
 - Heading: `Professional Stainless Steel Flange Manufacturing`
 - Company name: `Jiangsu Longping Metal Products Co., Ltd.`
-- Body copy from the Word requirements, describing worldwide distributor, engineering company, and industrial project supply plus standard and drawing-based custom capability.
+- First paragraph: `JIANGSU Longping Metal Products Co., Ltd. specializes in stainless steel flange manufacturing for distributors, engineering companies and industrial projects worldwide.`
+- Second paragraph: `With stable production capacity, experienced machining capability and knowledge of international flange standards, we supply standard and customized flange solutions based on drawings, specifications and project requirements.`
 - Link label: `View Production Capability`, linking to `/custom-machining`
 
 All homepage references to the company location use `Jiangsu`, avoiding `Taizhou` where the requirement calls for a clearer geographic signal.
