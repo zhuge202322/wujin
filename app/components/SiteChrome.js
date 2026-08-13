@@ -1,19 +1,21 @@
+import { headerCommands, navigation } from '../content/homepage';
+
 export function SiteHeader({ active }) {
   return (
     <header className="topbar">
       <div className="topbar-inner">
         <a className="wordmark" href="/" aria-label="LP Flange home"><img src="/images/lpflange-wordmark.png" alt="LP Flange - Longping Metal Products Co., Ltd." /></a>
         <nav className="desktop-nav" aria-label="Main navigation">
-          <a className={active === 'products' ? 'active' : ''} href="/products">Products</a>
-          <a className={active === 'custom' ? 'active' : ''} href="/custom-machining">Custom Machining</a>
-          <a className={active === 'resources' ? 'active' : ''} href="/technical-resources">Technical Resources</a>
-          <a className={active === 'standards' ? 'active' : ''} href="/standards">Standards</a>
-          <a className={active === 'about' ? 'active' : ''} href="/about">About Us</a>
+          {navigation.map((item) => <a className={active === item.active ? 'active' : ''} href={item.href} key={item.label}>{item.label}</a>)}
         </nav>
         <div className="nav-actions">
           <a className="icon-button material-symbols-outlined" href="/products" aria-label="Search products">search</a>
           <span className="icon-button material-symbols-outlined" aria-label="English language" title="English">language</span>
-          <a className="quote-button" href="mailto:sales@lpflange.com?subject=Flange%20RFQ">Get a Quote</a>
+          <div className="header-social" aria-label="Contact LP Flange">
+            <a className="icon-button material-symbols-outlined" href="https://wa.me/8617826472173" aria-label="Contact LP Flange on WhatsApp">hub</a>
+            <a className="icon-button material-symbols-outlined" href="mailto:sales@lpflange.com" aria-label="Email LP Flange">mail</a>
+          </div>
+          {headerCommands.map((command) => <a className={`quote-button ${command.variant === 'secondary' ? 'secondary-quote' : 'upload-drawing-button'}`} href={command.href} key={command.label}>{command.icon ? <span className="material-symbols-outlined">{command.icon}</span> : null}<span className="command-label">{command.label}</span></a>)}
         </div>
       </div>
     </header>
@@ -41,13 +43,13 @@ export function SiteFooter() {
           <div className="social-row">
             <a className="material-symbols-outlined" href="https://wa.me/8617826472173" aria-label="WhatsApp">hub</a>
             <a className="material-symbols-outlined" href="mailto:sales@lpflange.com" aria-label="Email">mail</a>
-            <span className="material-symbols-outlined" aria-label="Taizhou, China">location_on</span>
+            <span className="material-symbols-outlined" aria-label="Jiangsu, China">location_on</span>
           </div>
           <p className="sales-line">Global Sales: +86 178 2647 2173</p>
         </div>
       </div>
       <div className="container footer-bottom">
-        <p>&copy; 2026 Taizhou Longping Metal Products Co., Ltd.</p>
+        <p>&copy; 2026 Jiangsu Longping Metal Products Co., Ltd.</p>
         <div><span><i className="material-symbols-outlined">language</i> English (EN)</span><span><i className="material-symbols-outlined">public</i> Global Distribution</span></div>
       </div>
     </footer>

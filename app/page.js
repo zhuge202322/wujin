@@ -1,5 +1,6 @@
 import HeroCarousel from './components/HeroCarousel';
 import { SiteFooter, SiteHeader } from './components/SiteChrome';
+import { capabilities, companyIntro, proofPoints } from './content/homepage';
 
 const productTiles = [
   ['Threaded Flanges', 'stitch-product-3.jpg'],
@@ -8,12 +9,6 @@ const productTiles = [
   ['Custom Flanges', 'stitch-product-4.jpg'],
   ['Large Diameter Flanges', 'stock-2.jpg'],
   ['Tube Sheet Components', 'custom-flange.jpg']
-];
-
-const capabilities = [
-  ['settings_input_component', 'Standard Flange Production', 'Stainless steel flange supply across major international standards for repeat industrial requirements.'],
-  ['architecture', 'Custom Machining', 'Drawing-led production for special flange dimensions, connection patterns and non-standard parts.'],
-  ['fact_check', 'Inspection Control', 'Material, dimensions, surface and final order checks coordinated before shipment.']
 ];
 
 const process = [
@@ -26,23 +21,23 @@ const process = [
 export default function Home() {
   return (
     <>
-      <SiteHeader />
+      <SiteHeader active="home" />
       <main>
         <HeroCarousel />
 
         <section className="proof-rail">
-          <div className="container proof-rail-inner"><span><b>2016</b> Established in Taizhou</span><span><b>2,000 m2</b> Factory area</span><span><b>40</b> Team members</span><span><b>ASME / DIN / JIS</b> Standard support</span><a href="/about">About LP Flange <i className="material-symbols-outlined">arrow_forward</i></a></div>
+          <div className="container proof-rail-inner">{proofPoints.map((point) => <span key={point.value}><b>{point.value}</b>{point.label}</span>)}<a href="/about"><b>About LP</b><i className="material-symbols-outlined">arrow_forward</i></a></div>
         </section>
 
         <section className="section-pad home-intro">
           <div className="container intro-grid">
-            <div><p className="section-tag">WHY LP FLANGE</p><h2>Manufacturing clarity from first enquiry to final packing.</h2></div>
-            <div className="intro-copy"><p>Taizhou Longping Metal Products Co., Ltd. manufactures stainless steel flanges for distributors, equipment builders and industrial projects. We combine practical product knowledge with responsive communication so your order stays technically clear.</p><a className="text-link" href="/about">Meet our manufacturing team <span className="material-symbols-outlined">arrow_forward</span></a></div>
+            <div><p className="section-tag">{companyIntro.label}</p><h2>{companyIntro.heading}</h2></div>
+            <div className="intro-copy"><p className="company-name">{companyIntro.name}</p>{companyIntro.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}<a className="text-link" href={companyIntro.href}>{companyIntro.linkLabel} <span className="material-symbols-outlined">arrow_forward</span></a></div>
           </div>
         </section>
 
         <section className="capabilities section-pad" id="capabilities">
-          <div className="container"><div className="section-heading-row"><div><p className="section-tag">CORE CAPABILITIES</p><h2>Built around stainless steel flange production.</h2></div><a href="/custom-machining">Custom machining details <span className="material-symbols-outlined">arrow_forward</span></a></div><div className="capability-grid three-column">{capabilities.map(([icon, title, text]) => <article className="capability-card" key={title}><span className="material-symbols-outlined capability-icon">{icon}</span><h3>{title}</h3><p>{text}</p><a href="/custom-machining">Learn more <span className="material-symbols-outlined">arrow_forward</span></a></article>)}</div></div>
+          <div className="container"><div className="section-heading-row"><div><p className="section-tag">CORE CAPABILITIES</p><h2>Production, process and inspection in one manufacturing system.</h2></div><a href="/custom-machining">View Production Capability <span className="material-symbols-outlined">arrow_forward</span></a></div><div className="capability-grid three-column">{capabilities.map((item) => <article className="capability-card numbered-capability" key={item.title}><span className="capability-number">{item.number}</span><span className="material-symbols-outlined capability-icon">{item.icon}</span><h3>{item.title}</h3><p>{item.text}</p><a href={item.href}>{item.linkLabel} <span className="material-symbols-outlined">arrow_forward</span></a></article>)}</div></div>
         </section>
 
         <section className="section-pad product-showcase" id="products">
@@ -50,7 +45,7 @@ export default function Home() {
         </section>
 
         <section className="manufacturing-band">
-          <div className="container manufacturing-grid"><div className="manufacturing-image"><img src="/images/factory-cnc.jpg" alt="LP Flange CNC machining workshop" /></div><div className="manufacturing-copy"><p className="section-tag light">PRODUCTION ENVIRONMENT</p><h2>Machining capability that stays close to the specification.</h2><p>Our workshop uses CNC and numerical control lathes to support the dimensions, bores, faces and bolt patterns required across stainless steel flange production.</p><ul><li><span className="material-symbols-outlined">check_circle</span>CNC and numerical control machining</li><li><span className="material-symbols-outlined">check_circle</span>Standard and custom flange production</li><li><span className="material-symbols-outlined">check_circle</span>Order-led inspection checkpoints</li></ul><a className="carousel-primary" href="/custom-machining">Explore custom capability</a></div></div>
+          <div className="container manufacturing-grid"><div className="manufacturing-image"><img src="/images/factory-cnc.jpg" alt="LP Flange CNC machining workshop" /></div><div className="manufacturing-copy"><p className="section-tag light">PRODUCTION ENVIRONMENT</p><h2>Machining capability that stays close to the specification.</h2><p>Our Jiangsu workshop uses CNC and numerical control lathes to support the dimensions, bores, faces and bolt patterns required across stainless steel flange production.</p><ul><li><span className="material-symbols-outlined">check_circle</span>CNC and numerical control machining</li><li><span className="material-symbols-outlined">check_circle</span>Standard and custom flange production</li><li><span className="material-symbols-outlined">check_circle</span>Order-led inspection checkpoints</li></ul><a className="carousel-primary" href="/custom-machining">Explore custom capability</a></div></div>
         </section>
 
         <section className="applications section-pad" id="industries">
