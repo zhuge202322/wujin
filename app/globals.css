@@ -368,6 +368,11 @@ footer { background: var(--surface-container-highest); border-top: 1px solid var
 .hero-carousel { min-height: calc(100vh - 80px); height: 760px; position: relative; display: flex; align-items: stretch; overflow: hidden; background: #15202b; color: #fff; }
 .carousel-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.035); transition: opacity .9s ease, transform 6.5s ease; }
 .carousel-image.is-active { opacity: 1; transform: scale(1); }
+.carousel-media { position: absolute; inset: 0; opacity: 0; transform: scale(1.035); transition: opacity .9s ease, transform 6.5s ease; }
+.carousel-media.is-active { opacity: 1; transform: scale(1); }
+.warehouse-collage { display: grid; grid-template-columns: 1.45fr .85fr; grid-template-rows: 1fr 1fr; gap: 4px; background: #18222b; }
+.warehouse-collage img { width: 100%; height: 100%; min-width: 0; display: block; object-fit: cover; }
+.warehouse-collage img:first-child { grid-row: 1 / 3; }
 .carousel-shade { position: absolute; inset: 0; background: rgba(0,22,46,.56); }
 .carousel-inner { position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; }
 .carousel-copy { max-width: 760px; padding: 60px 0 100px; animation: carousel-copy-in .65s ease both; }
@@ -376,6 +381,16 @@ footer { background: var(--surface-container-highest); border-top: 1px solid var
 .carousel-kicker .material-symbols-outlined { font-size: 18px; }
 .carousel-copy h1 { max-width: 720px; margin-bottom: 24px; font-size: 64px; line-height: 1.08; letter-spacing: -.02em; font-weight: 700; }
 .carousel-copy > p { max-width: 650px; margin-bottom: 36px; color: rgba(255,255,255,.82); font-size: 18px; line-height: 1.65; }
+.carousel-advantages { max-width: 720px; display: flex; flex-wrap: wrap; gap: 0; margin: -8px 0 30px; border-top: 1px solid rgba(255,255,255,.32); border-bottom: 1px solid rgba(255,255,255,.32); }
+.carousel-advantages span { padding: 13px 22px; border-right: 1px solid rgba(255,255,255,.25); color: #fff; font-size: 13px; font-weight: 700; }
+.carousel-advantages span:first-child { padding-left: 0; }
+.carousel-facts { max-width: 720px; display: flex; flex-wrap: wrap; gap: 28px; margin: -8px 0 30px; }
+.carousel-facts > span { min-width: 220px; padding-left: 16px; border-left: 3px solid var(--inverse-primary); }
+.carousel-facts b, .carousel-facts small { display: block; }
+.carousel-facts b { color: #fff; font-size: 24px; line-height: 1.25; }
+.carousel-facts small { margin-top: 5px; color: rgba(255,255,255,.72); font-size: 12px; letter-spacing: .04em; }
+.standards-facts > span:first-child { max-width: 500px; }
+.standards-facts > span:first-child b { font-size: 15px; line-height: 1.5; letter-spacing: .035em; }
 .carousel-primary, .carousel-secondary { min-height: 54px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 17px 28px; border-radius: 8px; font-size: 14px; line-height: 1; letter-spacing: .05em; font-weight: 700; transition: .2s ease; }
 .carousel-primary { background: #fff; color: var(--primary); }
 .carousel-primary:hover { background: var(--primary-fixed); }
@@ -461,6 +476,15 @@ footer { background: var(--surface-container-highest); border-top: 1px solid var
   .carousel-copy { padding: 0; }
   .carousel-copy h1 { font-size: 42px; }
   .carousel-copy > p { font-size: 16px; }
+  .warehouse-collage { grid-template-columns: 1fr 1fr; grid-template-rows: 1.1fr .9fr; }
+  .warehouse-collage img:first-child { grid-column: 1 / 3; grid-row: 1; }
+  .carousel-advantages { margin-bottom: 24px; }
+  .carousel-advantages span { flex: 1 1 auto; padding: 11px 12px; font-size: 11px; text-align: center; }
+  .carousel-advantages span:first-child { padding-left: 12px; }
+  .carousel-facts { gap: 14px; margin-bottom: 24px; }
+  .carousel-facts > span { min-width: 0; flex: 1 1 100%; }
+  .carousel-facts b { font-size: 20px; }
+  .standards-facts > span:first-child b { font-size: 12px; }
   .carousel-controls { right: 16px; bottom: 24px; }
   .carousel-meta { left: 16px; right: auto; bottom: 40px; padding: 0; }
   .carousel-meta span:last-child { display: none; }
@@ -482,4 +506,4 @@ footer { background: var(--surface-container-highest); border-top: 1px solid var
   .carousel-controls > button { width: 40px; height: 40px; }
   .carousel-dots { display: none; }
 }
-@media (prefers-reduced-motion: reduce) { .carousel-image, .carousel-copy { animation: none; transition: none; } }
+@media (prefers-reduced-motion: reduce) { .carousel-image, .carousel-media, .carousel-copy { animation: none; transition: none; } }
