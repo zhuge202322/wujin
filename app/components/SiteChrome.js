@@ -43,13 +43,13 @@ export function SiteFooter() {
           <div className="social-row">
             <a className="material-symbols-outlined" href="https://wa.me/8617826472173" aria-label="WhatsApp">hub</a>
             <a className="material-symbols-outlined" href="mailto:sales@lpflange.com" aria-label="Email">mail</a>
-            <span className="material-symbols-outlined" aria-label="Taizhou, China">location_on</span>
+            <span className="material-symbols-outlined" aria-label="Jiangsu, China">location_on</span>
           </div>
           <p className="sales-line">Global Sales: +86 178 2647 2173</p>
         </div>
       </div>
       <div className="container footer-bottom">
-        <p>&copy; 2026 Taizhou Longping Metal Products Co., Ltd.</p>
+        <p>&copy; 2026 Jiangsu Longping Metal Products Co., Ltd.</p>
         <div><span><i className="material-symbols-outlined">language</i> English (EN)</span><span><i className="material-symbols-outlined">public</i> Global Distribution</span></div>
       </div>
     </footer>

@@ -1,6 +1,7 @@
 export const heroSlides = [
   {
-    image: '/images/flange-products.jpg',
+    media: 'product-collage',
+    images: ['/images/stitch-product-1.jpg', '/images/stitch-product-2.jpg', '/images/stitch-product-3.jpg'],
     alt: 'Finished stainless steel flange products manufactured by LP Flange',
     kicker: 'STAINLESS STEEL FLANGE MANUFACTURER',
     title: 'Stainless Steel Flanges Manufacturer',

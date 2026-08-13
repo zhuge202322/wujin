@@ -4,6 +4,14 @@ import { useEffect, useState } from 'react';
 import { heroSlides } from '../content/homepage';
 
 function SlideMedia({ slide, active }) {
+  if (slide.media === 'product-collage') {
+    return (
+      <div className={`carousel-media product-collage ${active ? 'is-active' : ''}`} aria-label={slide.alt}>
+        {slide.images.map((image, index) => <img key={image} src={image} alt={`Finished stainless steel flange product view ${index + 1}`} />)}
+      </div>
+    );
+  }
+
   if (slide.media === 'warehouse-collage') {
     return (
       <div className={`carousel-media warehouse-collage ${active ? 'is-active' : ''}`} aria-label={slide.alt}>
