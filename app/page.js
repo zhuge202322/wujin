@@ -26,7 +26,7 @@ const process = [
 export default function Home() {
   return (
     <>
-      <SiteHeader />
+      <SiteHeader active="home" />
       <main>
         <HeroCarousel />
 
