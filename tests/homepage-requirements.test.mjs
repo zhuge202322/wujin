@@ -86,3 +86,18 @@ test('homepage omits the removed production environment band', async () => {
   assert.doesNotMatch(source, /className="manufacturing-band"/);
   assert.doesNotMatch(source, /Machining capability that stays close to the specification\./);
 });
+
+test('mobile hero reserves a wide complete-image frame', async () => {
+  const css = await readFile(new URL('../app/globals.css', import.meta.url), 'utf8');
+  const carouselSource = await readFile(new URL('../app/components/HeroCarousel.js', import.meta.url), 'utf8');
+  assert.match(css, /\.hero-carousel \{ min-height: 0; height: auto; padding-bottom: 0; \}/);
+  assert.match(css, /\.carousel-image, \.carousel-media \{ inset: 0 0 auto; width: 100%; height: auto; aspect-ratio: 16 \/ 9;/);
+  assert.match(css, /object-fit: contain;/);
+  assert.match(css, /\.product-collage, \.warehouse-collage \{ display: block; \}/);
+  assert.match(css, /\.product-collage img, \.warehouse-collage img \{ display: none; \}/);
+  assert.match(css, /\.product-collage img:first-child, \.warehouse-collage img:first-child \{[^}]*object-fit: contain;/);
+  assert.match(css, /padding-top: calc\(56\.25% \+ 24px\)/);
+  assert.match(css, /\.carousel-navigation \{ position: static; display: flex;/);
+  assert.match(css, /\.carousel-controls \{ position: static;/);
+  assert.match(carouselSource, /event\.currentTarget\.blur\(\)/);
+});

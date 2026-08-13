@@ -36,6 +36,10 @@ export default function HeroCarousel() {
   const slide = heroSlides[active];
   const next = () => setActive((current) => (current + 1) % heroSlides.length);
   const previous = () => setActive((current) => (current - 1 + heroSlides.length) % heroSlides.length);
+  const changeSlide = (action) => (event) => {
+    action();
+    event.currentTarget.blur();
+  };
 
   return (
     <section className="hero-carousel" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} aria-label="LP Flange manufacturing highlights">
@@ -51,8 +55,10 @@ export default function HeroCarousel() {
           {slide.standards ? <div className="carousel-facts standards-facts"><span><b>{slide.standards}</b><small>Worldwide standards</small></span><span><b>{slide.capacity}</b><small>{slide.capacityLabel}</small></span></div> : null}
           <div className="button-row"><a className="carousel-primary" href={slide.primaryHref}>{slide.primaryLabel}</a><a className="carousel-secondary" href="mailto:sales@lpflange.com?subject=Flange%20RFQ">Talk to sales <span className="material-symbols-outlined">arrow_forward</span></a></div>
         </div>
-        <div className="carousel-meta"><span>LP FLANGE / 0{active + 1}</span><span>{String(active + 1).padStart(2, '0')} / {String(heroSlides.length).padStart(2, '0')}</span></div>
-        <div className="carousel-controls"><button onClick={previous} aria-label="Previous slide"><span className="material-symbols-outlined">arrow_back</span></button><div className="carousel-dots">{heroSlides.map((item, index) => <button className={index === active ? 'active' : ''} key={item.title} onClick={() => setActive(index)} aria-label={`Go to slide ${index + 1}`} />)}</div><button onClick={next} aria-label="Next slide"><span className="material-symbols-outlined">arrow_forward</span></button></div>
+        <div className="carousel-navigation">
+          <div className="carousel-meta"><span>LP FLANGE / 0{active + 1}</span><span>{String(active + 1).padStart(2, '0')} / {String(heroSlides.length).padStart(2, '0')}</span></div>
+          <div className="carousel-controls"><button onClick={changeSlide(previous)} aria-label="Previous slide"><span className="material-symbols-outlined">arrow_back</span></button><div className="carousel-dots">{heroSlides.map((item, index) => <button className={index === active ? 'active' : ''} key={item.title} onClick={changeSlide(() => setActive(index))} aria-label={`Go to slide ${index + 1}`} />)}</div><button onClick={changeSlide(next)} aria-label="Next slide"><span className="material-symbols-outlined">arrow_forward</span></button></div>
+        </div>
       </div>
     </section>
   );

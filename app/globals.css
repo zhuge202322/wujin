@@ -432,6 +432,7 @@ footer { background: var(--surface-container-highest); border-top: 1px solid var
 .carousel-secondary { color: #fff; border: 1px solid rgba(255,255,255,.65); }
 .carousel-secondary:hover { border-color: #fff; background: rgba(255,255,255,.1); }
 .carousel-secondary .material-symbols-outlined { font-size: 18px; }
+.carousel-navigation { display: contents; }
 .carousel-controls { position: absolute; right: 24px; bottom: 32px; display: flex; align-items: center; gap: 18px; }
 .carousel-controls > button { width: 44px; height: 44px; padding: 0; display: flex; align-items: center; justify-content: center; color: #fff; background: transparent; border: 1px solid rgba(255,255,255,.55); border-radius: 999px; cursor: pointer; }
 .carousel-controls > button:hover { background: #fff; color: var(--primary); }
@@ -511,14 +512,18 @@ footer { background: var(--surface-container-highest); border-top: 1px solid var
   .shared-order-grid > a, .shared-contact-inner > a { justify-self: start; }
 }
 @media (max-width: 767px) {
-  .hero-carousel { min-height: 720px; height: calc(100svh - 80px); }
-  .carousel-inner { justify-content: flex-start; padding-top: 28px; padding-bottom: 80px; }
+  .hero-carousel { min-height: 0; height: auto; padding-bottom: 0; }
+  .carousel-image, .carousel-media { inset: 0 0 auto; width: 100%; height: auto; aspect-ratio: 16 / 9; min-height: 0; object-fit: contain; transform: none; background: #15202b; }
+  .carousel-image.is-active, .carousel-media.is-active { transform: none; }
+  .product-collage, .warehouse-collage { display: block; }
+  .product-collage img, .warehouse-collage img { display: none; }
+  .product-collage img:first-child, .warehouse-collage img:first-child { width: 100%; height: 100%; display: block; object-fit: contain; background: #15202b; }
+  .carousel-shade { inset: 0 0 auto; height: auto; aspect-ratio: 16 / 9; }
+  .carousel-inner { justify-content: flex-start; min-height: 0; padding-top: calc(56.25% + 24px); padding-bottom: 0; }
   .carousel-copy { padding: 0; }
   .carousel-kicker { margin-bottom: 14px; }
   .carousel-copy h1 { margin-bottom: 16px; font-size: 36px; line-height: 1.08; }
   .carousel-copy > p { margin-bottom: 22px; font-size: 15px; line-height: 1.5; }
-  .warehouse-collage { grid-template-columns: 1fr 1fr; grid-template-rows: 1.1fr .9fr; }
-  .warehouse-collage img:first-child { grid-column: 1 / 3; grid-row: 1; }
   .carousel-advantages { margin-top: 0; margin-bottom: 20px; }
   .carousel-advantages span { flex: 1 1 auto; padding: 11px 12px; font-size: 11px; text-align: center; }
   .carousel-advantages span:first-child { padding-left: 12px; }
@@ -527,8 +532,9 @@ footer { background: var(--surface-container-highest); border-top: 1px solid var
   .carousel-facts b { font-size: 20px; }
   .standards-facts > span:first-child b { font-size: 12px; }
   .carousel-primary, .carousel-secondary { min-height: 50px; padding-top: 14px; padding-bottom: 14px; }
-  .carousel-controls { right: 16px; bottom: 24px; }
-  .carousel-meta { left: 16px; right: auto; bottom: 40px; padding: 0; }
+  .carousel-navigation { position: static; display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 18px; padding: 16px 0 20px; border-top: 1px solid rgba(255,255,255,.2); }
+  .carousel-controls { position: static; flex: 0 0 auto; gap: 10px; }
+  .carousel-meta { position: static; min-width: 0; flex: 1; padding: 0; }
   .carousel-meta span:last-child { display: none; }
   .proof-rail-inner > span { min-width: 100%; padding: 9px 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.15); }
   .proof-rail-inner > a { padding: 12px 0; }
