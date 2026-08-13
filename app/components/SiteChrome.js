@@ -12,7 +12,7 @@ export function SiteHeader({ active }) {
           <a className="icon-button material-symbols-outlined" href="/products" aria-label="Search products">search</a>
           <span className="icon-button material-symbols-outlined" aria-label="English language" title="English">language</span>
           <div className="header-social" aria-label="Contact LP Flange">
-            <a className="icon-button material-symbols-outlined" href="https://wa.me/8617826472173" aria-label="Contact LP Flange on WhatsApp">hub</a>
+            <a className="icon-button whatsapp-button" href="https://wa.me/8617826472173" aria-label="Contact LP Flange on WhatsApp" title="WhatsApp"><span aria-hidden="true">WA</span></a>
             <a className="icon-button material-symbols-outlined" href="mailto:sales@lpflange.com" aria-label="Email LP Flange">mail</a>
           </div>
           {headerCommands.map((command) => <a className={`quote-button ${command.variant === 'secondary' ? 'secondary-quote' : 'upload-drawing-button'}`} href={command.href} key={command.label}>{command.icon ? <span className="material-symbols-outlined">{command.icon}</span> : null}<span className="command-label">{command.label}</span></a>)}
@@ -41,7 +41,7 @@ export function SiteFooter() {
         <div>
           <h3>Connect</h3>
           <div className="social-row">
-            <a className="material-symbols-outlined" href="https://wa.me/8617826472173" aria-label="WhatsApp">hub</a>
+            <a className="whatsapp-button" href="https://wa.me/8617826472173" aria-label="WhatsApp" title="WhatsApp"><span aria-hidden="true">WA</span></a>
             <a className="material-symbols-outlined" href="mailto:sales@lpflange.com" aria-label="Email">mail</a>
             <span className="material-symbols-outlined" aria-label="Jiangsu, China">location_on</span>
           </div>

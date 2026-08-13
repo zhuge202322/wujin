@@ -102,3 +102,21 @@ export const capabilities = [
     linkLabel: 'View Inspection'
   }
 ];
+
+export const applicationFocus = {
+  label: 'APPLICATION FOCUS',
+  title: 'Stainless Steel Flanges for Industrial Applications',
+  text: 'Reliable flange solutions for piping systems, equipment manufacturing and customized industrial projects.',
+  scenes: [
+    { title: 'Process Piping', image: '/images/factory-floor.jpg', alt: 'Industrial process piping and stainless steel pipework in a manufacturing facility' },
+    { title: 'Equipment Builders', image: '/images/factory-cnc.jpg', alt: 'CNC equipment and machinery used for industrial equipment manufacturing' },
+    { title: 'Water Treatment', image: '/images/factory-exterior.png', alt: 'Industrial treatment facility for stainless steel fluid-handling systems' },
+    { title: 'Non-standard Projects', image: '/images/engineer-drawing.jpg', alt: 'Engineer reviewing a CAD drawing for a customized industrial flange project' }
+  ],
+  industries: [
+    { icon: 'factory', title: 'Chemical & Process Industry', text: 'Flanges for corrosion-resistant piping systems.' },
+    { icon: 'precision_manufacturing', title: 'Equipment Manufacturing', text: 'Components for machinery and skid systems.' },
+    { icon: 'water_drop', title: 'Water Treatment', text: 'Stainless steel connections for fluid handling.' },
+    { icon: 'architecture', title: 'Custom Engineering', text: 'Drawing-based flange manufacturing.' }
+  ]
+};

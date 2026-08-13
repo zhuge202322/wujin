@@ -72,6 +72,10 @@ a { color: inherit; text-decoration: none; }
 .header-social { display: flex; align-items: center; gap: 2px; padding-right: 4px; border-right: 1px solid var(--outline-variant); }
 .icon-button { color: var(--on-surface-variant); padding: 8px; border-radius: 999px; }
 .icon-button:hover { background: var(--surface-container-low); }
+.whatsapp-button { display: inline-flex; align-items: center; justify-content: center; color: var(--on-surface-variant); font-family: Arial, sans-serif; font-size: 11px; line-height: 1; font-weight: 800; letter-spacing: 0; }
+.whatsapp-button span { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border: 2px solid currentColor; border-radius: 50%; }
+.icon-button.whatsapp-button { padding: 8px; }
+.whatsapp-button:hover { color: var(--primary); }
 .quote-button { min-height: 44px; background: var(--primary); color: #fff; padding: 12px 16px; border-radius: 8px; transition: opacity .2s, transform .2s; display: inline-flex; align-items: center; justify-content: center; gap: 7px; white-space: nowrap; }
 .quote-button .material-symbols-outlined { font-size: 18px; }
 .secondary-quote { color: var(--primary); background: transparent; border: 1px solid var(--primary); }
@@ -283,20 +287,18 @@ footer { background: var(--surface-container-highest); border-top: 1px solid var
 .about-contact p { margin: 0 0 32px; color: var(--on-surface-variant); font-size: 16px; }
 .applications { background: #fff; }
 .applications-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 24px; align-items: stretch; }
-.applications-image { min-height: 410px; position: relative; overflow: hidden; border-radius: 12px; background: var(--surface-container); }
-.applications-image img { width: 100%; height: 100%; min-height: 410px; display: block; object-fit: cover; }
-.applications-image:after { content: ""; position: absolute; inset: 45% 0 0; background: linear-gradient(transparent, rgba(0,23,52,.75)); }
-.applications-image > div { position: absolute; z-index: 1; left: 24px; right: 24px; bottom: 24px; display: flex; flex-direction: column; gap: 6px; color: #fff; }
-.applications-image strong { font-size: 24px; line-height: 1.2; }
-.applications-image span { opacity: .82; font-size: 14px; }
+.applications-scenes { min-height: 410px; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); grid-template-rows: repeat(2,minmax(0,1fr)); gap: 4px; overflow: hidden; border-radius: 12px; background: var(--surface-container); }
+.applications-scenes figure { min-width: 0; min-height: 0; position: relative; overflow: hidden; margin: 0; background: var(--surface-container); }
+.applications-scenes figure:after { content: ""; position: absolute; inset: 45% 0 0; background: linear-gradient(transparent, rgba(0,23,52,.78)); }
+.applications-scenes img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .35s; }
+.applications-scenes figure:hover img { transform: scale(1.04); }
+.applications-scenes figcaption { position: absolute; z-index: 1; left: 16px; right: 16px; bottom: 14px; color: #fff; font-size: 15px; line-height: 1.2; font-weight: 700; }
 .application-list { display: flex; flex-direction: column; border-top: 1px solid var(--outline-variant); }
-.application-list a { min-height: 102px; display: grid; grid-template-columns: 32px 1fr 24px; align-items: center; gap: 16px; border-bottom: 1px solid var(--outline-variant); color: var(--primary); }
-.application-list a:hover { background: var(--surface-container-low); }
-.application-list a > .material-symbols-outlined { font-size: 22px; }
+.application-list > div { min-height: 102px; display: grid; grid-template-columns: 32px 1fr; align-items: center; gap: 16px; border-bottom: 1px solid var(--outline-variant); color: var(--primary); }
+.application-list > div > .material-symbols-outlined { font-size: 22px; }
 .application-list b, .application-list small { display: block; }
 .application-list b { margin-bottom: 5px; font-size: 17px; line-height: 1.2; }
 .application-list small { color: var(--on-surface-variant); font-size: 13px; line-height: 1.4; }
-.application-list a > .material-symbols-outlined:last-child { font-size: 18px; }
 .delivery { background: var(--surface-container-low); }
 .delivery-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 24px; }
 .delivery-grid > div { min-height: 190px; padding: 24px; background: #fff; border: 1px solid var(--outline-variant); border-radius: 8px; }
@@ -357,7 +359,7 @@ footer { background: var(--surface-container-highest); border-top: 1px solid var
   .footer-bottom > div { flex-wrap: wrap; gap: 12px 24px; }
   .catalog-grid, .detail-grid, .process-grid, .resource-grid, .checklist-grid, .standards-strip-grid, .standards-page-grid, .quality-note-grid, .about-company-grid, .factory-grid, .custom-contact-grid, .process-visual-grid, .process-proof-heading { grid-template-columns: 1fr; gap: 40px; }
   .applications-grid { grid-template-columns: 1fr; }
-  .applications-image, .applications-image img { min-height: 300px; }
+  .applications-scenes { min-height: 360px; }
   .delivery-grid { grid-template-columns: 1fr; }
   .product-category-nav a { margin-right: 18px; padding-right: 0; }
   .product-category-nav a:last-child { margin-left: 0; }
