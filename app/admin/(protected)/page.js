@@ -1,4 +1,5 @@
 import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
 
 import { SESSION_COOKIE_NAME, verifySessionToken } from '../../../lib/auth.js';
 import { getDatabase } from '../../../lib/db.js';
@@ -9,6 +10,7 @@ export default async function AdminDashboard() {
   const database = getDatabase();
   const cookieStore = await cookies();
   const admin = verifySessionToken(cookieStore.get(SESSION_COOKIE_NAME)?.value);
+  if (!admin) redirect('/admin/login');
   const user = database.prepare('SELECT created_at, updated_at FROM admin_users WHERE id = ?').get(admin.userId);
   const counts = {
     categories: database.prepare('SELECT COUNT(*) AS count FROM product_categories').get().count,

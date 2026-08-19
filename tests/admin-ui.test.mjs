@@ -7,13 +7,15 @@ async function source(relativePath) {
 }
 
 test('admin routes separate public login from the protected application shell', async () => {
-  const [login, protectedLayout, shell] = await Promise.all([
+  const [login, protectedLayout, dashboard, shell] = await Promise.all([
     source('app/admin/login/page.js'),
     source('app/admin/(protected)/layout.js'),
+    source('app/admin/(protected)/page.js'),
     source('app/admin/components/AdminShell.js')
   ]);
   assert.match(login, /AdminLoginForm/);
   assert.match(protectedLayout, /redirect\('\/admin\/login'\)/);
+  assert.match(dashboard, /if \(!admin\) redirect\('\/admin\/login'\)/);
   assert.match(shell, /Dashboard/);
   assert.match(shell, /Products/);
   assert.match(shell, /Images/);
