@@ -15,6 +15,11 @@
 .env*
 !.env.example
 /.vercel/
+/data/*.sqlite
+/data/*.sqlite-wal
+/data/*.sqlite-shm
+/public/uploads/*
+!/public/uploads/.gitkeep
 
 # OS and editor files
 .DS_Store
