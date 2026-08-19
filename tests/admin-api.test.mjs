@@ -212,7 +212,8 @@ test('image upload, replacement, and deletion remove managed files only after da
     await access(savedFiles[1]);
 
     const listed = await listImages(new Request('http://localhost/api/admin/images', { headers: { cookie } }));
-    assert.equal((await listed.json()).data[0].altText, 'Replacement hero image');
+    const listedImage = (await listed.json()).data.find((record) => record.id === image.id);
+    assert.equal(listedImage.altText, 'Replacement hero image');
     assert.equal((await deleteImage(
       jsonRequest(`http://localhost/api/admin/images/${image.id}`, 'DELETE', undefined, cookie),
       { params: Promise.resolve({ id: String(image.id) }) }

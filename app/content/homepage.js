@@ -120,3 +120,31 @@ export const applicationFocus = {
     { icon: 'architecture', title: 'Custom Engineering', text: 'Drawing-based flange manufacturing.' }
   ]
 };
+
+// Stable keys used by the admin image library. Public pages keep their source-code
+// fallback until a later integration explicitly resolves these records at render time.
+export const managedImageKeys = [
+  { pageKey: 'home', sectionKey: 'hero-product-1', imageUrl: '/images/stitch-product-1.jpg', altText: 'Finished stainless steel flange products manufactured by LP Flange' },
+  { pageKey: 'home', sectionKey: 'hero-product-2', imageUrl: '/images/stitch-product-2.jpg', altText: 'Finished stainless steel flange products manufactured by LP Flange' },
+  { pageKey: 'home', sectionKey: 'hero-product-3', imageUrl: '/images/stitch-product-3.jpg', altText: 'Finished stainless steel flange products manufactured by LP Flange' },
+  { pageKey: 'home', sectionKey: 'hero-stock-1', imageUrl: '/images/stock-1.jpg', altText: 'Stainless steel flange stock available for industrial supply' },
+  { pageKey: 'home', sectionKey: 'hero-stock-2', imageUrl: '/images/stock-2.jpg', altText: 'Stainless steel flange stock available for industrial supply' },
+  { pageKey: 'home', sectionKey: 'hero-stock-3', imageUrl: '/images/stock-3.jpg', altText: 'Stainless steel flange stock available for industrial supply' },
+  { pageKey: 'home', sectionKey: 'hero-standards', imageUrl: '/images/factory-cnc.jpg', altText: 'LP Flange factory machinery and CNC production equipment' },
+  { pageKey: 'home', sectionKey: 'hero-custom', imageUrl: '/images/engineer-drawing.jpg', altText: 'Mechanical engineer reviewing a technical manufacturing drawing' },
+  { pageKey: 'home', sectionKey: 'applications-process-piping', imageUrl: '/images/factory-floor.jpg', altText: 'Industrial process piping and stainless steel pipework in a manufacturing facility' },
+  { pageKey: 'home', sectionKey: 'applications-equipment-builders', imageUrl: '/images/factory-cnc.jpg', altText: 'CNC equipment and machinery used for industrial equipment manufacturing' },
+  { pageKey: 'home', sectionKey: 'applications-water-treatment', imageUrl: '/images/factory-exterior.png', altText: 'Industrial treatment facility for stainless steel fluid-handling systems' },
+  { pageKey: 'home', sectionKey: 'applications-non-standard', imageUrl: '/images/engineer-drawing.jpg', altText: 'Engineer reviewing a CAD drawing for a customized industrial flange project' },
+  { pageKey: 'products', sectionKey: 'hero', imageUrl: '/images/stitch-product-1.jpg', altText: 'Stainless steel blind flange product' },
+  { pageKey: 'about', sectionKey: 'hero', imageUrl: '/images/factory-exterior.png', altText: 'LP Flange factory exterior in Jiangsu, China' },
+  { pageKey: 'about', sectionKey: 'factory-floor', imageUrl: '/images/factory-floor.jpg', altText: 'LP Flange production floor' },
+  { pageKey: 'standards', sectionKey: 'hero', imageUrl: '/images/flange-products.jpg', altText: 'Stainless steel flange range' },
+  { pageKey: 'standards', sectionKey: 'quality-inspection', imageUrl: '/images/spectrometer.jpg', altText: 'LP Flange material inspection' },
+  { pageKey: 'standards', sectionKey: 'production-flow', imageUrl: '/images/process-flow-production.png', altText: 'LP Flange photographic production flow showing ten manufacturing and inspection stages' },
+  { pageKey: 'custom-machining', sectionKey: 'hero', imageUrl: '/images/factory-cnc.jpg', altText: 'CNC and numerical control lathes in the LP Flange workshop' },
+  { pageKey: 'custom-machining', sectionKey: 'production-flow', imageUrl: '/images/process-flow-overview.png', altText: 'LP Flange ten-step manufacturing process from raw material to packing' },
+  { pageKey: 'custom-machining', sectionKey: 'custom-examples', imageUrl: '/images/custom-flange.jpg', altText: 'LP Flange custom stainless steel flange examples' },
+  { pageKey: 'technical-resources', sectionKey: 'hero', imageUrl: '/images/spectrometer.jpg', altText: 'Material inspection with a spectrometer' },
+  { pageKey: 'site', sectionKey: 'company-logo', imageUrl: '/images/lpflange-wordmark.png', altText: 'LP Flange - Longping Metal Products Co., Ltd.' }
+];
